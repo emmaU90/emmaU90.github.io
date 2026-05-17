@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Emmanuel Unegbu — Research Analyst and Economist specialising in Policy Analysis, Development Economics, and Business Research. Available for graduate opportunities, pre-doctoral fellowships, research roles, and freelance projects."/>
+  <meta name="author" content="Emmanuel Unegbu"/>
+  <title>Emmanuel Unegbu | Research Analyst &amp; Economist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"/>
+  <style>
+    :root{
+      --ff-display:'Cormorant Garamond','Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;
+      --ff-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      --ff-mono:'Space Mono','Courier New',Monaco,monospace;
+    }
+    [data-theme="dark"]{
+      --bg:#07091c;--bg2:#0c1024;--bg3:#12172e;--bg4:#1a2040;
+      --gold:#c9a84c;--gold2:#e6c96a;--gold3:#f5e0a0;
+      --glow:rgba(201,168,76,.18);--faint:rgba(201,168,76,.07);
+      --w:#ede9df;--w2:rgba(237,233,223,.75);--m:rgba(237,233,223,.55);
+      --b:rgba(201,168,76,.25);--b2:rgba(237,233,223,.08);--b3:rgba(237,233,223,.04);
+      --shadow:rgba(0,0,0,.55);--shadow2:rgba(0,0,0,.25);
+      --card:rgba(12,16,36,.85);--input:#12172e;--nav:rgba(7,9,28,.93);
+      --green:#4ade80;--green-bg:rgba(74,222,128,.10);--green-b:rgba(74,222,128,.22);
+      --blue:#60a5fa;--blue-bg:rgba(96,165,250,.10);--blue-b:rgba(96,165,250,.22);
+    }
+    [data-theme="light"]{
+      --bg:#f6f3ec;--bg2:#ffffff;--bg3:#efe9db;--bg4:#e8e0ce;
+      --gold:#9a7118;--gold2:#b8900a;--gold3:#7a5a10;
+      --glow:rgba(154,113,24,.14);--faint:rgba(154,113,24,.06);
+      --w:#1c1a16;--w2:rgba(28,26,22,.80);--m:rgba(28,26,22,.55);
+      --b:rgba(154,113,24,.28);--b2:rgba(28,26,22,.10);--b3:rgba(28,26,22,.04);
+      --shadow:rgba(0,0,0,.14);--shadow2:rgba(0,0,0,.06);
+      --card:rgba(255,255,255,.90);--input:#efe9db;--nav:rgba(246,243,236,.95);
+      --green:#16a34a;--green-bg:rgba(22,163,74,.10);--green-b:rgba(22,163,74,.22);
+      --blue:#2563eb;--blue-bg:rgba(37,99,235,.10);--blue-b:rgba(37,99,235,.22);
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{background:var(--bg);color:var(--w);font-family:var(--ff-body);font-size:18px;line-height:1.82;overflow-x:hidden;transition:background .35s,color .35s;-webkit-font-smoothing:antialiased}
+    a{color:var(--gold);text-decoration:none;transition:color .25s}
+    a:hover{color:var(--gold2)}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+    img{max-width:100%;display:block;border-radius:4px}
+    button{font-family:inherit;cursor:pointer}
+    ul{list-style:none}
+
+    .container{max-width:1160px;margin:0 auto;padding:0 2.8rem}
+    .section{padding:120px 0}
+    .text-center{text-align:center}
+
+    .eyebrow{font-family:var(--ff-mono);font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:1rem}
+    .eyebrow::after{content:'';flex:1;max-width:50px;height:1px;background:var(--gold);opacity:.35}
+    .eyebrow.center{justify-content:center}
+    .eyebrow.center::after{display:none}
+
+    .dtitle{font-family:var(--ff-display);font-size:clamp(2.6rem,5vw,4rem);font-weight:700;line-height:1.08;margin-bottom:1.5rem;letter-spacing:-.01em}
+    .dtitle.center{text-align:center}
+    .gold{color:var(--gold)}
+
+    .gline{width:48px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:1.5rem 0 3rem}
+    .gline.center{margin-left:auto;margin-right:auto}
+
+    .reveal{opacity:1;transform:translateY(0);transition:opacity .75s ease,transform .75s ease}
+    .reveal.vis{opacity:1;transform:translateY(0)}
+    .hl{color:var(--w);font-weight:600}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;padding:1.1rem 3rem;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--b);transition:padding .3s ease,background .35s}
+    .nav-logo{font-family:var(--ff-display);font-size:1.25rem;font-weight:700;color:var(--gold);letter-spacing:.05em;flex-shrink:0;z-index:2}
+    .nav-center{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center}
+    .nav-links{display:flex;gap:2rem}
+    .nav-links a{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--m);transition:color .25s;white-space:nowrap}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-right{display:flex;align-items:center;gap:1.2rem;margin-left:auto;flex-shrink:0;z-index:2}
+    .theme-btn{width:34px;height:34px;border-radius:50%;background:none;border:none;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:background .25s,transform .35s}
+    .theme-btn:hover{background:var(--faint);transform:rotate(20deg)}
+    .theme-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s}
+    .icon-sun{display:block}
+    .icon-moon{display:none}
+    [data-theme="light"] .icon-sun{display:none}
+    [data-theme="light"] .icon-moon{display:block}
+    .nav-cta{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.5rem 1.1rem;border:1px solid var(--gold);color:var(--gold);border-radius:2px;transition:background .25s,color .25s;white-space:nowrap}
+    .nav-cta:hover{background:var(--gold);color:var(--bg)}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
+    .nav-toggle span{width:22px;height:1.5px;background:var(--gold);display:block;transition:transform .3s,opacity .3s}
+    .mob-nav{display:none;position:fixed;top:62px;left:0;right:0;z-index:299;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--b);padding:1.2rem 2rem;flex-direction:column;gap:.8rem}
+    .mob-nav.open{display:flex}
+    .mob-nav a{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--m);padding:.6rem 0;border-bottom:1px solid var(--b2);transition:color .25s}
+    .mob-nav a:last-child{border-bottom:none}
+    .mob-nav a:hover{color:var(--gold)}
+
+    /* HERO */
+    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding-top:80px;position:relative;overflow:hidden}
+    #hero::before{content:'';position:absolute;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 68%);top:-180px;right:-120px;pointer-events:none}
+    #hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--bg) 100%),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,.012) 79px,rgba(201,168,76,.012) 80px);pointer-events:none}
+    .hero-l{position:relative;z-index:2;padding-left:2.5rem}
+    .hero-pre{display:inline-flex;align-items:center;gap:.8rem;font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid var(--b);padding:.4rem 1.1rem;border-radius:20px;background:var(--faint);margin-bottom:2rem;opacity:1}
+    .pdot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2.2s ease infinite}
+    @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+    .hero-name{font-family:var(--ff-display);font-size:clamp(4rem,8vw,7rem);font-weight:700;line-height:.92;letter-spacing:-.025em;margin-bottom:.3rem}
+    .hero-name-italic{font-family:var(--ff-display);font-size:clamp(4rem,8vw,7rem);font-weight:400;font-style:italic;color:var(--gold);line-height:1.05;display:block;margin-bottom:2rem}
+    .hero-role{font-family:var(--ff-mono);font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:var(--m);margin-bottom:1.4rem}
+    .hero-desc{font-size:1.15rem;color:var(--m);max-width:520px;line-height:1.82;margin-bottom:2.5rem}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+    .btn{font-family:var(--ff-mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;border-radius:2px;border:none;display:inline-flex;align-items:center;gap:.5rem;transition:background .25s,color .25s,transform .25s,box-shadow .25s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:var(--gold);color:#07091c;font-weight:700}
+    .btn-gold:hover{background:var(--gold2);color:#07091c;box-shadow:0 10px 28px var(--glow)}
+    .btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--b)}
+    .btn-ghost:hover{background:var(--faint)}
+    .hero-stats{display:flex;border-top:1px solid var(--b2);padding-top:2.5rem}
+    .hstat{flex:1;padding-right:2rem}
+    .hstat+.hstat{padding-left:2rem;border-left:1px solid var(--b2)}
+    .hstat-n{font-family:var(--ff-display);font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1}
+    .hstat-l{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--m);margin-top:.3rem}
+    .hero-r{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;padding-right:2.5rem}
+
+    .hcard{width:100%;max-width:420px;background:var(--bg2);border:1px solid var(--b);border-radius:10px;overflow:hidden;box-shadow:0 40px 80px var(--shadow),0 0 60px var(--glow);transition:background .35s,border-color .35s}
+    .hcard-top{background:linear-gradient(135deg,var(--bg3),var(--bg4));padding:2.2rem 2.2rem 1.8rem;border-bottom:1px solid var(--b);position:relative;overflow:hidden;transition:background .35s}
+    .hcard-top::before{content:'';position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,var(--glow) 0%,transparent 70%);top:-70px;right:-70px}
+    .hav{width:72px;height:72px;border-radius:50%;border:2px solid var(--gold);background:var(--bg3);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;transition:background .35s;overflow:hidden}
+    .hav svg{width:38px;height:38px;stroke:var(--gold);fill:none;opacity:.4;stroke-width:1.2}
+    .hcname{font-family:var(--ff-display);font-size:1.35rem;font-weight:700;color:var(--w);line-height:1.15}
+    .hctit{font-family:var(--ff-mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:.22rem}
+    .hcloc{font-size:.82rem;color:var(--m);margin-top:.4rem}
+    .hcard-body{padding:1.6rem 2.2rem}
+    .hctags{display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:1.6rem}
+    .hctag{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.1em;background:var(--faint);border:1px solid var(--b);color:var(--gold);padding:.22rem .65rem;border-radius:20px}
+    .hcm{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b2)}
+    .hcmi{background:var(--bg2);padding:.9rem;text-align:center;transition:background .35s}
+    .hcmn{font-family:var(--ff-display);font-size:1.55rem;font-weight:700;color:var(--gold);line-height:1}
+    .hcml{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--m);margin-top:.18rem}
+    .hcard-foot{padding:1.1rem 2.2rem;border-top:1px solid var(--b2);display:flex;align-items:center;justify-content:space-between}
+    .hstatus{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m)}
+    .hdot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 2.2s infinite}
+
+    /* ABOUT */
+    #about{background:var(--bg2);transition:background .35s}
+    .ag{display:grid;grid-template-columns:1fr 1.55fr;gap:6rem;align-items:start}
+    .apw{position:relative;margin-top:1rem}
+    .ap{width:100%;aspect-ratio:3/4;background:var(--bg3);border:1px solid var(--b);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--m);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;position:relative;z-index:1;overflow:hidden;transition:background .35s}
+    .ap svg{width:50px;height:50px;stroke:currentColor;fill:none;opacity:.2}
+    .apw::after{content:'';position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--b);border-radius:8px;z-index:0}
+    .abadge{position:absolute;bottom:-18px;right:-18px;background:var(--gold);color:#07091c;padding:.9rem 1.2rem;border-radius:6px;z-index:2}
+    .abadge strong{display:block;font-family:var(--ff-display);font-size:1.7rem;font-weight:700;line-height:1}
+    .abadge span{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase}
+    .at p{font-size:1.08rem;color:var(--m);margin-bottom:1.15rem;line-height:1.8}
+    .at p:last-of-type{margin-bottom:0}
+    .ahi{background:var(--faint);border:1px solid var(--b);border-radius:6px;padding:1.2rem 1.5rem;margin-top:2rem}
+    .ahl{font-family:var(--ff-mono);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.45rem}
+    .chip{background:var(--faint);border:1px solid var(--b);color:var(--gold2);padding:.35rem 1rem;border-radius:20px;font-size:.85rem;font-family:var(--ff-mono)}
+
+    /* EXPERIENCE */
+    .xp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem}
+    .xp-card{background:var(--card);border:1px solid var(--b2);border-radius:8px;padding:1.8rem;transition:border-color .35s,transform .35s,box-shadow .35s;position:relative}
+    .xp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity .35s}
+    .xp-card:hover{border-color:var(--b);transform:translateY(-6px);box-shadow:0 24px 48px var(--shadow),0 0 32px var(--glow)}
+    .xp-card:hover::before{opacity:1}
+    .xp-date{font-family:var(--ff-mono);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+    .xp-role{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--w);line-height:1.3;margin-bottom:.4rem}
+    .xp-org{font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.12em;color:var(--m);margin-bottom:1.1rem;display:flex;align-items:center;gap:.4rem}
+    .xp-loc{color:var(--gold);font-size:.65rem}
+    .xp-list{list-style:none}
+    .xp-list li{font-size:.86rem;color:var(--m);padding:.3rem 0 .3rem 1.1rem;position:relative;line-height:1.65}
+    .xp-list li::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:700}
+
+    /* SKILLS */
+    .s2{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+    .scat{font-family:var(--ff-mono);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+    .sr{margin-bottom:1.55rem}
+    .sm{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.52rem}
+    .sn{font-size:1rem;font-weight:600;color:var(--w2)}
+    .sp{font-family:var(--ff-mono);font-size:.82rem;color:var(--gold);font-weight:700}
+    .bt{height:3px;background:var(--b2);border-radius:2px;overflow:hidden}
+    .bf{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));width:0;transition:width 1.5s cubic-bezier(.22,1,.36,1)}
+    .tw2{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+    .tt{background:var(--bg2);border:1px solid var(--b2);border-radius:6px;padding:1.1rem .8rem;text-align:center;transition:border-color .3s,background .3s,transform .3s,box-shadow .3s;cursor:default}
+    .tt:hover{border-color:var(--gold);background:var(--bg3);transform:translateY(-4px);box-shadow:0 12px 28px var(--shadow2),0 0 18px var(--faint)}
+    .ti{font-size:1.4rem;margin-bottom:.4rem}
+    .tn{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.1em;color:var(--m)}
+
+    /* PROJECTS */
+    #projects{background:var(--bg2);transition:background .35s}
+    .pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+    .pc{display:block;background:var(--card);border:1px solid var(--b2);border-radius:10px;overflow:hidden;position:relative;text-decoration:none;color:inherit;transition:border-color .35s,transform .35s,box-shadow .35s;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity .35s;z-index:1}
+    .pc:hover{border-color:var(--b);transform:translateY(-8px);box-shadow:0 28px 56px var(--shadow),0 0 36px var(--glow)}
+    .pc:hover::before{opacity:1}
+    .pc-view{position:absolute;top:14px;right:14px;z-index:2;font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:#07091c;padding:.28rem .75rem;border-radius:20px;font-weight:700;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s}
+    .pc:hover .pc-view{opacity:1;transform:translateY(0)}
+    .pci{width:100%;height:195px;overflow:hidden;background:var(--bg3);position:relative}
+    .pci img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
+    .pc:hover .pci img{transform:scale(1.06)}
+    .pcip{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;color:var(--m);background:linear-gradient(135deg,var(--bg3),var(--bg2))}
+    .pcip svg{width:36px;height:36px;stroke:currentColor;fill:none;opacity:.22}
+    .pcip span{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase}
+    .pcb{padding:1.8rem 1.8rem 1.6rem}
+    .pt2{display:flex;align-items:flex-start;gap:.42rem;flex-wrap:wrap;margin-bottom:1.1rem}
+    .ptag{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--b);padding:.18rem .6rem;border-radius:20px}
+    .pbg{font-family:var(--ff-mono);font-size:.56rem;background:var(--green-bg);color:var(--green);border:1px solid var(--green-b);padding:.18rem .6rem;border-radius:20px;margin-left:auto}
+    .pbg-prog{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-b)}
+    .ps{font-family:var(--ff-display);font-size:2.6rem;font-weight:700;color:var(--gold);line-height:1;margin:.45rem 0 .18rem;letter-spacing:-.01em}
+    .psb{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--m);margin-bottom:.95rem}
+    .ptit{font-family:var(--ff-display);font-size:1.25rem;font-weight:700;margin-bottom:.75rem;line-height:1.32;color:var(--w)}
+    .pd{font-size:.97rem;color:var(--m);margin-bottom:1.1rem;line-height:1.78}
+    .pf{list-style:none;margin-bottom:1.1rem}
+    .pf li{font-size:.9rem;color:var(--m);padding:.32rem 0 .32rem 1.1rem;border-bottom:1px solid var(--b2);position:relative}
+    .pf li::before{content:'›';position:absolute;left:0;color:var(--gold);font-size:1rem;font-weight:700;line-height:1.4}
+    .pim{background:var(--faint);border-left:2px solid var(--gold);padding:.8rem 1rem;font-size:.9rem;color:var(--m);border-radius:0 4px 4px 0}
+    .pim strong{color:var(--gold)}
+    .pto{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.9rem}
+    .ptol{font-family:var(--ff-mono);font-size:.68rem;background:var(--b3);color:var(--m);padding:.22rem .55rem;border-radius:2px;border:1px solid var(--b2)}
+
+    /* NUMBERS */
+    #numbers{position:relative;overflow:hidden}
+    #numbers::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(201,168,76,.05) 0%,transparent 70%)}
+    .ng{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b2);border:1px solid var(--b2);border-radius:10px;overflow:hidden;position:relative;z-index:1}
+    .nc{background:var(--bg);padding:3.2rem 2rem;text-align:center;transition:background .3s}
+    .nc:hover{background:var(--bg2)}
+    .nv{font-family:var(--ff-display);font-size:clamp(2.6rem,4.5vw,4.8rem);font-weight:700;color:var(--gold);line-height:1}
+    .nl{font-family:var(--ff-mono);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--m);margin-top:.55rem}
+
+    /* EDUCATION */
+    #education{background:var(--bg2);transition:background .35s}
+    .eg{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+    .tl{position:relative;padding-left:1.8rem}
+    .tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),transparent)}
+    .tli{position:relative;margin-bottom:2.6rem;opacity:1;transform:translateX(0)}
+    .tli::before{content:'';position:absolute;left:-1.8rem;top:7px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+    .tld{font-family:var(--ff-mono);font-size:.65rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.22rem}
+    .tlt{font-weight:700;font-size:1.08rem;margin-bottom:.14rem;color:var(--w)}
+    .tls{font-size:.94rem;color:var(--m)}
+    .tlb{display:inline-block;margin-top:.45rem;font-family:var(--ff-mono);font-size:.62rem;background:var(--faint);color:var(--gold);border:1px solid var(--b);padding:.18rem .62rem;border-radius:20px}
+
+    /* TESTIMONIAL */
+    #testimonial{text-align:center}
+    .qm{font-family:var(--ff-display);font-size:7rem;font-weight:700;color:var(--gold);opacity:.14;line-height:.45;margin-bottom:1.2rem}
+    blockquote{font-family:var(--ff-display);font-size:clamp(1.3rem,2.6vw,1.85rem);font-style:italic;max-width:680px;margin:0 auto;line-height:1.62;color:var(--w2)}
+    .qa{font-family:var(--ff-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--m);margin-top:2rem}
+
+    /* CONTACT */
+    #contact{background:var(--bg2);transition:background .35s}
+    .cw{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .cls{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.4rem}
+    .cl{display:flex;align-items:center;gap:.9rem;background:var(--bg3);border:1px solid var(--b2);color:var(--m);padding:.9rem 1.3rem;border-radius:6px;font-size:.88rem;transition:border-color .3s,color .3s,transform .3s;text-decoration:none}
+    .cl:hover{border-color:var(--gold);color:var(--gold);transform:translateX(4px)}
+    .cli{width:34px;height:34px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .cli svg{width:18px;height:18px;fill:#fff}
+    .c-em{background:#ea4335}.c-li{background:#0077b5}.c-gh{background:#24292e}
+    .c-md{background:#000}.c-rg{background:#00ccbb}
+    .cii{flex:1;min-width:0}
+    .cil{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.08rem}
+    .civ{font-size:.98rem;color:var(--w);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .calbtn{display:flex;align-items:center;gap:.9rem;background:var(--faint);border:1px solid var(--b);color:var(--gold);padding:1rem 1.5rem;border-radius:6px;font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s;margin-bottom:14px;text-decoration:none;width:100%}
+    .calbtn:hover{background:var(--gold);color:#07091c;transform:translateX(4px)}
+    .cal-icon{font-size:1.25rem;flex-shrink:0}
+    .otl{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
+    .ois{display:flex;flex-direction:column;gap:.45rem}
+    .oi{display:flex;align-items:center;gap:.75rem;font-size:1rem;color:var(--m)}
+    .oi::before{content:'→';color:var(--gold);font-size:.85rem;font-weight:700;flex-shrink:0}
+    .cft{font-family:var(--ff-display);font-size:1.75rem;font-weight:700;margin-bottom:.45rem;color:var(--w)}
+    .cfs{font-size:1rem;color:var(--m);margin-bottom:1.4rem;line-height:1.7}
+    .cfg{margin-bottom:1.1rem}
+    .cfl{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.45rem}
+    .cfi,.cfa{width:100%;padding:.9rem 1rem;background:var(--input);border:1px solid var(--b2);color:var(--w);border-radius:4px;font-family:var(--ff-body);font-size:1rem;transition:border-color .25s,box-shadow .25s,background .35s;outline:none}
+    .cfi:focus,.cfa:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--faint)}
+    .cfi::placeholder,.cfa::placeholder{color:var(--m);opacity:.75}
+    .cfa{min-height:125px;resize:vertical}
+    .cfsub{width:100%;padding:.95rem;margin-top:.4rem;background:var(--gold);color:#07091c;border:none;border-radius:4px;font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;transition:background .25s,transform .25s,box-shadow .25s}
+    .cfsub:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 22px var(--glow)}
+    .cfsub:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+    .cfmsg{display:none;margin-top:.9rem;padding:.75rem .95rem;border-radius:4px;font-size:.82rem;font-family:var(--ff-mono);letter-spacing:.05em;line-height:1.5}
+    .cfmsg.ok{background:var(--green-bg);border:1px solid var(--green-b);color:var(--green);display:block}
+    .cfmsg.er{background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.25);color:#ff6060;display:block}
+    .fnote{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.06em;color:var(--m);margin-top:.9rem;padding:.75rem .95rem;background:var(--faint);border:1px solid var(--b2);border-radius:4px;line-height:1.7}
+    .fnote strong{color:var(--gold)}
+
+    /* FOOTER */
+    footer{background:var(--bg);border-top:1px solid var(--b2);padding:2.2rem;text-align:center;transition:background .35s}
+    footer p{font-family:var(--ff-mono);font-size:.8rem;letter-spacing:.12em;color:var(--m)}
+    footer span{color:var(--gold)}
+
+    @media(max-width:1024px){
+      #hero{gap:2.5rem}
+      .ag{gap:3.5rem}
+      .s2{gap:3rem}
+      .xp-grid{grid-template-columns:1fr;gap:1.2rem}
+    }
+    @media(max-width:900px){
+      #hero{grid-template-columns:1fr;padding-top:90px}
+      .hero-r{display:none}
+      .ag,.s2,.eg,.cw{grid-template-columns:1fr;gap:3rem}
+      .ng{grid-template-columns:repeat(2,1fr)}
+      nav{padding:.9rem 1.5rem}
+      .nav-center,.nav-cta{display:none}
+      .nav-toggle{display:flex}
+      .hero-l{padding-left:0}
+    }
+    @media(max-width:640px){
+      .container{padding:0 1.3rem}
+      .section{padding:80px 0}
+      .ng{grid-template-columns:1fr}
+      .hero-stats{flex-direction:column;gap:1.4rem}
+      .hstat+.hstat{padding-left:0;border-left:none;border-top:1px solid var(--b2);padding-top:1.4rem}
+      .pg{grid-template-columns:1fr}
+      .tw2{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:400px){
+      .hero-name,.hero-name-italic{font-size:3rem}
+      .dtitle{font-size:2rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nb">
+  <div class="nav-logo">E.Unegbu</div>
+  <div class="nav-center">
+    <ul class="nav-links" id="nl">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark/light mode" title="Switch theme">
+      <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <a href="YOUR_CV_LINK" target="_blank" rel="noopener noreferrer" class="nav-cta" style="margin-right:6px">Download CV</a>
+    <a href="#contact" class="nav-cta">Contact Me</a>
+    <button class="nav-toggle" id="nt" onclick="toggleMob()" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav" id="mn" role="navigation" aria-label="Mobile navigation">
+  <a href="#about"      onclick="closeMob()">About</a>
+  <a href="#experience" onclick="closeMob()">Experience</a>
+  <a href="#projects"   onclick="closeMob()">Projects</a>
+  <a href="#skills"     onclick="closeMob()">Skills</a>
+  <a href="#education"  onclick="closeMob()">Education</a>
+  <a href="#contact"    onclick="closeMob()">Contact Me</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="hero" aria-label="Introduction">
+  <div class="hero-l">
+    <div class="hero-pre"><span class="pdot" aria-hidden="true"></span>Research Analyst &amp; Economist</div>
+    <h1 class="hero-name">Emmanuel</h1>
+    <span class="hero-name-italic" aria-hidden="true">Unegbu</span>
+    <p class="hero-role">Economics &nbsp;·&nbsp; Policy &nbsp;·&nbsp; Business &nbsp;·&nbsp; Finance</p>
+    <p class="hero-desc">
+      Trinational researcher trained across <strong class="hl">Togo, Ghana, and Nigeria</strong> —
+      transforming complex economic data into evidence-based insights that inform policy,
+      business strategy, and development outcomes across West Africa and beyond.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-gold">Explore My Work ↓</a>
+      <a href="#contact"  class="btn btn-ghost">Get In Touch</a>
+      <a href="YOUR_CV_LINK" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="display:inline-flex;align-items:center;gap:6px">📄 Download CV</a>
+    </div>
+    <div class="hero-stats" role="list">
+      <div class="hstat" role="listitem"><div class="hstat-n">3.63</div><div class="hstat-l">CGPA / First Class</div></div>
+      <div class="hstat" role="listitem"><div class="hstat-n">3+</div><div class="hstat-l">Research Roles</div></div>
+      <div class="hstat" role="listitem"><div class="hstat-n">3</div><div class="hstat-l">Countries Worked</div></div>
+    </div>
+  </div>
+
+  <div class="hero-r" aria-hidden="true">
+    <div class="hcard">
+      <div class="hcard-top">
+        <div class="hav">
+          <svg viewBox="0 0 24 24" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="hcname">Emmanuel Unegbu</div>
+        <div class="hctit">Research Analyst &amp; Economist</div>
+        <div class="hcloc">📍 Lagos, Nigeria &nbsp;·&nbsp; 🌍 Remote &amp; International</div>
+      </div>
+      <div class="hcard-body">
+        <div class="hctags">
+          <span class="hctag">Economics</span>
+          <span class="hctag">Policy Analysis</span>
+          <span class="hctag">Development</span>
+          <span class="hctag">STATA &amp; R</span>
+          <span class="hctag">Econometrics</span>
+        </div>
+        <div class="hcm">
+          <div class="hcmi"><div class="hcmn">First</div><div class="hcml">Class Honours</div></div>
+          <div class="hcmi"><div class="hcmn">3+</div><div class="hcml">Research Roles</div></div>
+          <div class="hcmi"><div class="hcmn">8+</div><div class="hcml">Tools Mastered</div></div>
+          <div class="hcmi"><div class="hcmn">3</div><div class="hcml">Countries</div></div>
+        </div>
+      </div>
+      <div class="hcard-foot">
+        <div class="hstatus"><div class="hdot"></div>Open to opportunities</div>
+        <a href="#contact" style="font-family:var(--ff-mono);font-size:.65rem;letter-spacing:.12em;color:var(--gold)">Connect →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="ag">
+      <div class="apw reveal">
+        <div class="ap">
+          <svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <span>Add Your Photo Here</span>
+        </div>
+        <div class="abadge"><strong>First</strong><span>Class Honours</span></div>
+      </div>
+      <div class="at reveal">
+        <p class="eyebrow">ABOUT ME</p>
+        <h2 class="dtitle">From a Family Shop in Lomé<br/>to <span class="gold">Evidence-Based Research</span></h2>
+        <div class="gline"></div>
+        <p>I am <strong class="hl">Emmanuel Unegbu</strong>, a Research Analyst and Economist with a <strong class="hl">First Class Honours BSc in Economics</strong> from Central University, Ghana (CGPA 3.63/4.0). My work bridges <strong class="hl">economics, policy, business, and finance</strong> across West Africa.</p>
+        <p>My understanding of policy began early — as a child in Togo watching my father navigate sudden fuel subsidy reforms in Nigeria that tripled transport costs overnight. That moment taught me what economics textbooks could not: <strong class="hl">policies made without rigorous data analysis can break families and businesses.</strong> Today, I work to make sure decisions are guided by evidence, not assumption.</p>
+        <p>I have built research experience across <strong class="hl">three countries and three institutions</strong> — TheWorkrate (Kenya), Sterling Business Research and Consulting (Nigeria), and the Africa-China Centre for Policy &amp; Advisory (Ghana) — delivering quantitative analysis, policy briefs, and strategic recommendations to stakeholders, executives, and policymakers.</p>
+        <p>📍 <strong class="hl">Based in Lagos, Nigeria</strong> &nbsp;·&nbsp; 🌍 Available globally for remote engagements</p>
+        <div class="ahi">
+          <div class="ahl">Areas of Interest</div>
+          <div class="chips">
+            <span class="chip">Development Economics</span>
+            <span class="chip">International Economics</span>
+            <span class="chip">Policy Analysis</span>
+            <span class="chip">Education Policy</span>
+            <span class="chip">Energy Economics</span>
+            <span class="chip">Macroeconomics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Professional Journey</p>
+    <h2 class="dtitle reveal">Research <span class="gold">Experience</span></h2>
+    <div class="gline reveal"></div>
+
+    <div class="xp-grid">
+
+      <!-- TheWorkrate -->
+      <div class="xp-card reveal">
+        <div class="xp-date">May 2025 – Aug 2025</div>
+        <h3 class="xp-role">Trainee Research Executive</h3>
+        <p class="xp-org">TheWorkrate &nbsp;<span class="xp-loc">🇰🇪 Kenya</span></p>
+        <ul class="xp-list">
+          <li>Translated <strong>80+ data points</strong> into actionable insights, delivering white papers and presentations</li>
+          <li>Built and maintained structured databases, reducing reporting errors by <strong>15%</strong></li>
+          <li>Enhanced data integrity and decision-making efficiency across client engagements</li>
+        </ul>
+      </div>
+
+      <!-- Sterling Business Research -->
+      <div class="xp-card reveal">
+        <div class="xp-date">Oct 2024 – Jan 2025</div>
+        <h3 class="xp-role">Trainee Research Executive</h3>
+        <p class="xp-org">Sterling Business Research &amp; Consulting (SBRC) &nbsp;<span class="xp-loc">🇳🇬 Lagos</span></p>
+        <ul class="xp-list">
+          <li>Conducted market data analyses using <strong>regression and forecasting</strong> to uncover consumer behaviour and economic trends</li>
+          <li>Designed and evaluated surveys, questionnaires, and opinion polls for accurate data collection</li>
+          <li>Delivered high-quality outputs that contributed to a <strong>20% increase in client satisfaction</strong></li>
+        </ul>
+      </div>
+
+      <!-- ACCPA -->
+      <div class="xp-card reveal">
+        <div class="xp-date">Aug 2023 – Aug 2024</div>
+        <h3 class="xp-role">Graduate Intern</h3>
+        <p class="xp-org">Africa-China Centre for Policy &amp; Advisory (ACCPA) &nbsp;<span class="xp-loc">🇬🇭 Accra</span></p>
+        <ul class="xp-list">
+          <li>Drafted reports on <strong>Africa-China trade relations</strong> under the Belt and Road Initiative</li>
+          <li>Delivered analyses highlighting strategic benefits for African economies — contributing to policy proposal discussions</li>
+          <li>Presented research to <strong>senior executives and policymakers</strong>, advancing ACCPA's policy initiatives</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Research Portfolio</p>
+    <h2 class="dtitle reveal">Selected <span class="gold">Projects</span></h2>
+    <div class="gline reveal"></div>
+    <div class="pg">
+
+      <!-- PROJECT 1: Education & GDP (your real Quarto/R project) -->
+      <a class="pc reveal" href="YOUR_EDUCATION_GDP_PROJECT_LINK" target="_blank" rel="noopener noreferrer"
+         aria-label="View Project: Does Education Spending influence GDP in Africa?">
+        <span class="pc-view" aria-hidden="true">View Report ↗</span>
+        <div class="pci">
+          <div class="pcip">
+            <svg viewBox="0 0 24 24" stroke-width="1"><path d="M12 14l9-5-9-5-9 5 9 5zM12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zM12 14l9-5"/></svg>
+            <span>Education &amp; GDP Analysis</span>
+          </div>
+        </div>
+        <div class="pcb">
+          <div class="pt2"><span class="ptag">Development</span><span class="ptag">Education Policy</span><span class="pbg">✓ Completed</span></div>
+          <div class="ps">R &amp; Quarto</div>
+          <div class="psb">Reproducible Research Report</div>
+          <h3 class="ptit">Does Education Spending Influence GDP in Africa?</h3>
+          <p class="pd">A reproducible empirical analysis examining the relationship between government education expenditure and economic growth across African economies, using panel data techniques and macroeconomic indicators.</p>
+          <ul class="pf">
+            <li>Built a <strong>full Quarto research report</strong> with code, data, and findings integrated</li>
+            <li>Applied <strong>econometric modelling</strong> to test policy-relevant hypotheses on human capital</li>
+            <li>Demonstrated transparent, <strong>reproducible workflow</strong> using R and version control on GitHub</li>
+          </ul>
+          <div class="pim"><strong>Why it matters:</strong> Provides evidence for African policymakers on whether education spending translates into measurable growth.</div>
+          <div class="pto"><span class="ptol">R</span><span class="ptol">Quarto</span><span class="ptol">GitHub</span><span class="ptol">Panel Data</span></div>
+        </div>
+      </a>
+
+      <!-- PROJECT 2: VC Funding (ongoing research) -->
+      <a class="pc reveal" href="YOUR_VC_PROJECT_LINK" target="_blank" rel="noopener noreferrer"
+         aria-label="View Project: Economic Indicators and Venture Capital in Nigerian Tech">
+        <span class="pc-view" aria-hidden="true">View Project ↗</span>
+        <div class="pci">
+          <div class="pcip">
+            <svg viewBox="0 0 24 24" stroke-width="1"><path d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
+            <span>VC Funding Research</span>
+          </div>
+        </div>
+        <div class="pcb">
+          <div class="pt2"><span class="ptag">Finance</span><span class="ptag">Economics</span><span class="pbg pbg-prog">⏳ Ongoing</span></div>
+          <div class="ps">2014–2024</div>
+          <div class="psb">10-Year Quantitative Study</div>
+          <h3 class="ptit">Economic Indicators &amp; Venture Capital in Nigerian Tech Startups</h3>
+          <p class="pd">A quantitative study examining how GDP, inflation, interest rates, and stock market trends influence venture capital funding into Nigeria's technology sector over a decade.</p>
+          <ul class="pf">
+            <li>Conducting <strong>OLS regression analysis</strong> on macroeconomic and VC funding data</li>
+            <li>Completed comprehensive <strong>literature review and methodology design</strong></li>
+            <li>Aiming to deliver actionable insights for <strong>policymakers and investors</strong></li>
+          </ul>
+          <div class="pim"><strong>Status:</strong> Independent research project — methodology established, data analysis in progress.</div>
+          <div class="pto"><span class="ptol">STATA</span><span class="ptol">R</span><span class="ptol">OLS Regression</span></div>
+        </div>
+      </a>
+
+      <!-- PROJECT 3: Ghana Public Debt Thesis -->
+      <a class="pc reveal" href="YOUR_THESIS_LINK" target="_blank" rel="noopener noreferrer"
+         aria-label="View Thesis: Public Debt and Economic Growth in Ghana">
+        <span class="pc-view" aria-hidden="true">View Thesis ↗</span>
+        <div class="pci">
+          <div class="pcip">
+            <svg viewBox="0 0 24 24" stroke-width="1"><path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+            <span>Bachelor's Thesis</span>
+          </div>
+        </div>
+        <div class="pcb">
+          <div class="pt2"><span class="ptag">Macro</span><span class="ptag">Time Series</span><span class="pbg">✓ Completed</span></div>
+          <div class="ps">1980–2021</div>
+          <div class="psb">40-Year Time Series</div>
+          <h3 class="ptit">A Time Series Analysis of Public Debt on Ghana's Economic Growth</h3>
+          <p class="pd">Bachelor's thesis analysing the long-run and short-run relationship between public debt and economic growth in Ghana using time series econometrics over four decades of data.</p>
+          <ul class="pf">
+            <li>Applied <strong>cointegration and econometric modelling</strong> to test the debt-growth nexus</li>
+            <li>Found <strong>no significant long-run effect</strong>, with implications for debt management</li>
+            <li>Contributed to academic debate on <strong>sustainable debt policy</strong> in developing economies</li>
+          </ul>
+          <div class="pim"><strong>Outcome:</strong> Completed as part of First Class Honours BSc Economics — Central University Ghana.</div>
+          <div class="pto"><span class="ptol">EViews</span><span class="ptol">STATA</span><span class="ptol">Cointegration</span></div>
+        </div>
+      </a>
+
+      <!-- PROJECT 4: Africa-China Model -->
+      <a class="pc reveal" href="YOUR_ACCPA_PROJECT_LINK" target="_blank" rel="noopener noreferrer"
+         aria-label="View Project: Africa-China Relations Model UN Simulation">
+        <span class="pc-view" aria-hidden="true">View Project ↗</span>
+        <div class="pci">
+          <div class="pcip">
+            <svg viewBox="0 0 24 24" stroke-width="1"><path d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            <span>Policy Initiative</span>
+          </div>
+        </div>
+        <div class="pcb">
+          <div class="pt2"><span class="ptag">International</span><span class="ptag">Diplomacy</span><span class="pbg">✓ Accepted</span></div>
+          <div class="ps">2025/26</div>
+          <div class="psb">Launch Year</div>
+          <h3 class="ptit">Africa–China Relations Model Initiative</h3>
+          <p class="pd">Designed a Model UN-style simulation programme for Africa–China relations, with a comprehensive framework for participant selection, case studies, and evaluation — accepted by ACCPA stakeholders for launch.</p>
+          <ul class="pf">
+            <li>Developed full <strong>programme framework</strong> and evaluation methodology</li>
+            <li>Designed <strong>case studies</strong> covering trade, infrastructure, and diplomacy</li>
+            <li>Stakeholder-approved for <strong>2025/2026 launch</strong> at ACCPA</li>
+          </ul>
+          <div class="pim"><strong>Impact:</strong> Will train future African diplomats in negotiation and policy analysis through experiential learning.</div>
+          <div class="pto"><span class="ptol">Programme Design</span><span class="ptol">Policy</span><span class="ptol">Case Studies</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ NUMBERS ============ -->
+<section id="numbers" class="section">
+  <div class="container">
+    <p class="eyebrow center reveal">At a Glance</p>
+    <h2 class="dtitle center reveal">By the <span class="gold">Numbers</span></h2>
+    <div class="gline center reveal"></div>
+    <div class="ng reveal">
+      <div class="nc"><div class="nv">3.63</div><div class="nl">First Class CGPA</div></div>
+      <div class="nc"><div class="nv">3+</div><div class="nl">Research Roles</div></div>
+      <div class="nc"><div class="nv">3</div><div class="nl">Countries Worked</div></div>
+      <div class="nc"><div class="nv">4+</div><div class="nl">Research Projects</div></div>
+      <div class="nc"><div class="nv">40yrs</div><div class="nl">Data Analysed (Thesis)</div></div>
+      <div class="nc"><div class="nv">8+</div><div class="nl">Analytical Tools</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Capabilities</p>
+    <h2 class="dtitle reveal">Skills &amp; <span class="gold">Expertise</span></h2>
+    <div class="gline reveal"></div>
+    <div class="s2">
+      <div class="reveal" id="sbars">
+        <p class="scat">Quantitative &amp; Analytical</p>
+        <div class="sr"><div class="sm"><span class="sn">Econometric Modelling</span><span class="sp">92%</span></div><div class="bt"><div class="bf" data-w="92"></div></div></div>
+        <div class="sr"><div class="sm"><span class="sn">Statistical &amp; Regression Analysis</span><span class="sp">90%</span></div><div class="bt"><div class="bf" data-w="90"></div></div></div>
+        <div class="sr"><div class="sm"><span class="sn">Time Series Analysis</span><span class="sp">88%</span></div><div class="bt"><div class="bf" data-w="88"></div></div></div>
+        <div class="sr"><div class="sm"><span class="sn">Data Visualisation &amp; Reporting</span><span class="sp">87%</span></div><div class="bt"><div class="bf" data-w="87"></div></div></div>
+        <div class="sr"><div class="sm"><span class="sn">Policy &amp; Economic Analysis</span><span class="sp">90%</span></div><div class="bt"><div class="bf" data-w="90"></div></div></div>
+        <div class="sr"><div class="sm"><span class="sn">Research Writing &amp; Reporting</span><span class="sp">93%</span></div><div class="bt"><div class="bf" data-w="93"></div></div></div>
+        <div class="sr"><div class="sm"><span class="sn">Survey Design &amp; Data Collection</span><span class="sp">85%</span></div><div class="bt"><div class="bf" data-w="85"></div></div></div>
+      </div>
+      <div class="reveal">
+        <p class="scat">Tools &amp; Software</p>
+        <div class="tw2">
+          <div class="tt"><div class="ti">📊</div><div class="tn">STATA</div></div>
+          <div class="tt"><div class="ti">📉</div><div class="tn">EViews</div></div>
+          <div class="tt"><div class="ti">📈</div><div class="tn">R Studio</div></div>
+          <div class="tt"><div class="ti">📐</div><div class="tn">MINITAB</div></div>
+          <div class="tt"><div class="ti">🗄️</div><div class="tn">SQL</div></div>
+          <div class="tt"><div class="ti">🔢</div><div class="tn">SPSS</div></div>
+          <div class="tt"><div class="ti">📊</div><div class="tn">Power BI</div></div>
+          <div class="tt"><div class="ti">📗</div><div class="tn">Excel</div></div>
+        </div>
+        <p class="scat" style="margin-top:2rem">Areas of Research Interest</p>
+        <div class="chips">
+          <span class="chip">Development Economics</span>
+          <span class="chip">International Economics</span>
+          <span class="chip">Policy Analysis</span>
+          <span class="chip">Energy Economics</span>
+          <span class="chip">Education Policy</span>
+          <span class="chip">Macroeconomics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Academic Background</p>
+    <h2 class="dtitle reveal">Education &amp; <span class="gold">Certifications</span></h2>
+    <div class="gline reveal"></div>
+    <div class="eg">
+      <div class="tl">
+        <div class="tli">
+          <div class="tld">2019 – 2023</div>
+          <div class="tlt">BSc. Economics — First Class Honours</div>
+          <div class="tls">Central University, Accra, Ghana &nbsp;·&nbsp; CGPA 3.63/4.0</div>
+          <span class="tlb">🏆 First Class Honours</span>
+          <p style="margin-top:.7rem;font-size:.88rem;color:var(--m);line-height:1.65"><em>Thesis: A Time Series Analysis of Public Debt on Ghana's Economic Growth (1980–2021)</em></p>
+        </div>
+        <div class="tli">
+          <div class="tld">Jul 2025</div>
+          <div class="tlt">Research Writing &amp; Analytics Training</div>
+          <div class="tls">Zion Tech Hub</div>
+        </div>
+        <div class="tli">
+          <div class="tld">Nov 2024</div>
+          <div class="tlt">AI Career Essentials</div>
+          <div class="tls">ALX AICE Programme</div>
+        </div>
+      </div>
+      <div class="tl">
+        <div class="tli">
+          <div class="tld">Aug 2024</div>
+          <div class="tlt">Aspire Leaders Program — Leadership</div>
+          <div class="tls">Aspire Institute</div>
+          <span class="tlb">🌍 Competitive Selection</span>
+        </div>
+        <div class="tli">
+          <div class="tld">Apr 2024</div>
+          <div class="tlt">Data Analytics Certification</div>
+          <div class="tls">Blossom Corporate Training</div>
+        </div>
+        <div class="tli">
+          <div class="tld">2022 – 2023</div>
+          <div class="tlt">President — Central University Economics Student Association (CUESA)</div>
+          <div class="tls">Led academic symposium, boosted member engagement by 15%</div>
+          <span class="tlb">👔 Leadership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section id="testimonial" class="section">
+  <div class="container text-center">
+    <div class="qm reveal" aria-hidden="true">"</div>
+    <blockquote class="reveal">
+      Emmanuel delivered research presentations to senior executives and policymakers, receiving commendations for clarity, insight, and strategic relevance — contributing to the advancement of ACCPA's policy initiatives.
+    </blockquote>
+    <p class="qa reveal">— Africa–China Centre for Policy &amp; Advisory (ACCPA)</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section">
+  <div class="container">
+    <p class="eyebrow center reveal">Let's Connect</p>
+    <h2 class="dtitle center reveal">Open for <span class="gold">What's Next</span></h2>
+    <div class="gline center reveal"></div>
+
+    <div class="cw reveal">
+      <div>
+        <div class="cls">
+          <a id="emailLink" href="#" onclick="var e='emmanuelunegbu90'+'@'+'gmail.com';window.location.href='mailto:'+e;return false;" class="cl">
+            <div class="cli c-em" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div class="cii">
+              <div class="cil">Email</div>
+              <div class="civ" id="emailDisplay">emmanuelunegbu90 [at] gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://linkedin.com/in/emmanuelunegbu" target="_blank" rel="noopener noreferrer" class="cl">
+            <div class="cli c-li" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="cii">
+              <div class="cil">LinkedIn</div>
+              <div class="civ">linkedin.com/in/emmanuelunegbu</div>
+            </div>
+          </a>
+
+          <a href="https://github.com/emmaU90" target="_blank" rel="noopener noreferrer" class="cl">
+            <div class="cli c-gh" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </div>
+            <div class="cii">
+              <div class="cil">GitHub</div>
+              <div class="civ">github.com/emmaU90</div>
+            </div>
+          </a>
+
+          <a href="https://medium.com/@emmanuelunegbu" target="_blank" rel="noopener noreferrer" class="cl">
+            <div class="cli c-md" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+            </div>
+            <div class="cii">
+              <div class="cil">Medium</div>
+              <div class="civ">medium.com/@emmanuelunegbu</div>
+            </div>
+          </a>
+
+          <a href="https://researchgate.net/profile/emmanuelunegbu" target="_blank" rel="noopener noreferrer" class="cl">
+            <div class="cli c-rg" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.193 12.193 0 00-.198 1.284.544.544 0 01-.177.356 1.006 1.006 0 01-.614.179 1.006 1.006 0 01-.614-.179.546.546 0 01-.177-.357 12.06 12.06 0 00-.198-1.283c-.243-.744-.65-1.303-1.213-1.68C12.834.19 12.145 0 11.327 0c-1.355 0-2.43.554-3.22 1.66-.79 1.107-1.184 2.72-1.184 4.84 0 2.12.394 3.73 1.184 4.837.79 1.106 1.865 1.66 3.22 1.66.818 0 1.507-.19 2.072-.565.563-.377.97-.936 1.214-1.68.132-.405.197-.838.197-1.284 0-.267.059-.462.178-.584.12-.12.327-.18.614-.18.287 0 .495.06.614.18.12.122.178.317.178.584 0 .446.065.879.197 1.284.244.744.651 1.303 1.214 1.68.565.376 1.254.564 2.072.564 1.355 0 2.43-.554 3.22-1.66.79-1.107 1.184-2.72 1.184-4.84 0-2.12-.394-3.733-1.184-4.84C22.016.554 20.94 0 19.586 0z"/></svg>
+            </div>
+            <div class="cii">
+              <div class="cil">ResearchGate</div>
+              <div class="civ">researchgate.net/emmanuelunegbu</div>
+            </div>
+          </a>
+        </div>
+
+        <a href="YOUR_CV_LINK" target="_blank" rel="noopener noreferrer" class="calbtn">
+          <span class="cal-icon">📄</span>
+          Download My CV / Resume
+        </a>
+
+        <a href="https://calendly.com/emmanuelunegbu90" target="_blank" rel="noopener noreferrer" class="calbtn">
+          <span class="cal-icon">📅</span>
+          Book a Meeting / View My Availability
+        </a>
+
+        <div class="otl">Currently Open To</div>
+        <div class="ois">
+          <div class="oi">Graduate Programme Applications (MSc, MPhil, PhD)</div>
+          <div class="oi">Pre-Doctoral Fellowships &amp; Research Assistantships</div>
+          <div class="oi">Full-Time Research &amp; Analyst Roles</div>
+          <div class="oi">Freelance Research &amp; Consulting Projects</div>
+          <div class="oi">Co-authorship &amp; Academic Collaborations</div>
+          <div class="oi">Policy Advisory Work — NGOs, Government, Think Tanks</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="cft">Send Me a Message</div>
+        <p class="cfs">
+          Whether you're recruiting for a position, exploring research collaboration, or considering me for a graduate programme — I'd love to hear from you. Your message goes directly to <strong id="formEmail" style="color:var(--gold)">emmanuelunegbu90@gmail.com</strong>
+        </p>
+
+        <form id="cf" onsubmit="sendMsg(event)" novalidate>
+          <div class="cfg">
+            <label class="cfl" for="cfn">Your Name *</label>
+            <input class="cfi" type="text" id="cfn" name="name" placeholder="e.g. Dr. Sarah Ahmed" required autocomplete="name"/>
+          </div>
+          <div class="cfg">
+            <label class="cfl" for="cfe">Your Email *</label>
+            <input class="cfi" type="email" id="cfe" name="email" placeholder="your@email.com" required autocomplete="email"/>
+          </div>
+          <div class="cfg">
+            <label class="cfl" for="cfsi">Subject *</label>
+            <input class="cfi" type="text" id="cfsi" name="subject" placeholder="e.g. Research Collaboration Opportunity" required/>
+          </div>
+          <div class="cfg">
+            <label class="cfl" for="cfm">Message *</label>
+            <textarea class="cfa" id="cfm" name="message" placeholder="Tell me about your project, opportunity, or question..." required></textarea>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+          <input type="hidden" name="_subject" value="New portfolio enquiry — Emmanuel Unegbu"/>
+          <input type="hidden" name="_replyto" id="cfrt"/>
+          <button type="submit" class="cfsub" id="cfBtn">Send Message →</button>
+          <div class="cfmsg" id="cfmsg" role="alert" aria-live="polite"></div>
+        </form>
+
+        <div class="fnote" id="fnote">
+          <strong>⚙️ Activate direct email delivery (one-time, 3 minutes):</strong><br/>
+          1. Visit <strong>formspree.io</strong> → sign up free<br/>
+          2. Create a new form → enter <strong id="noteEmail">emmanuelunegbu90@gmail.com</strong><br/>
+          3. Copy the Form ID (e.g. <strong>xwkqrbzp</strong>)<br/>
+          4. Open <strong>index.html</strong> → find <strong>YOUR_FORMSPREE_ID</strong> → paste your ID<br/>
+          5. Upload to GitHub → done!
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>Emmanuel Unegbu</span> &nbsp;·&nbsp; Research Analyst &amp; Economist &nbsp;·&nbsp; Lagos · Accra · Lomé</p>
+</footer>
+
+<script>
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  try { localStorage.setItem('theme', t); } catch(e) {}
+}
+(function() {
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') { applyTheme(saved); }
+  } catch(e) {}
+})();
+function toggleTheme() {
+  var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+}
+
+function toggleMob() {
+  var mn = document.getElementById('mn');
+  var nt = document.getElementById('nt');
+  if (!mn || !nt) return;
+  var open = mn.classList.toggle('open');
+  nt.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeMob() {
+  var mn = document.getElementById('mn');
+  var nt = document.getElementById('nt');
+  if (mn) mn.classList.remove('open');
+  if (nt) nt.setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', function(e) {
+  var mn = document.getElementById('mn');
+  var nt = document.getElementById('nt');
+  if (!mn || !nt) return;
+  if (mn.classList.contains('open') && !mn.contains(e.target) && !nt.contains(e.target)) {
+    closeMob();
+  }
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeMob(); }
+});
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var bars = document.querySelectorAll('.bf');
+    for (var i = 0; i < bars.length; i++) {
+      bars[i].style.width = (bars[i].getAttribute('data-w') || 0) + '%';
+    }
+  }, 300);
+});
+
+window.addEventListener('scroll', function() {
+  var nb = document.getElementById('nb');
+  if (!nb) return;
+  nb.style.padding = (window.pageYOffset || window.scrollY) > 55 ? '.7rem 3rem' : '1.1rem 3rem';
+}, { passive: true });
+
+(function() {
+  var e = 'emmanuelunegbu90' + '@' + 'gmail.com';
+  var ids = ['emailDisplay','formEmail','noteEmail'];
+  for (var i=0;i<ids.length;i++) {
+    var el = document.getElementById(ids[i]);
+    if (el) { el.textContent = e; }
+  }
+  var l = document.getElementById('emailLink');
+  if (l) { l.href = 'mailto:' + e; }
+})();
+
+var FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
+
+function sendMsg(e) {
+  e.preventDefault();
+  var btn  = document.getElementById('cfBtn');
+  var msg  = document.getElementById('cfmsg');
+  var note = document.getElementById('fnote');
+
+  var name    = (document.getElementById('cfn').value || '').trim();
+  var email   = (document.getElementById('cfe').value || '').trim();
+  var subject = (document.getElementById('cfsi').value || '').trim();
+  var message = (document.getElementById('cfm').value || '').trim();
+
+  msg.className = 'cfmsg';
+  msg.textContent = '';
+
+  if (!name || !email || !subject || !message) {
+    msg.textContent = 'Please fill in all required fields.';
+    msg.className = 'cfmsg er';
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    msg.textContent = 'Please enter a valid email address.';
+    msg.className = 'cfmsg er';
+    return;
+  }
+
+  document.getElementById('cfrt').value = email;
+
+  if (!FORMSPREE_ID || FORMSPREE_ID === 'YOUR_FORMSPREE_ID') {
+    var s = encodeURIComponent('[Portfolio Enquiry] ' + subject);
+    var b = encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + message);
+    window.location.href = 'mailto:emmanuelunegbu90@gmail.com?subject=' + s + '&body=' + b;
+    msg.textContent = 'Your email app is opening with your message pre-filled!';
+    msg.className = 'cfmsg ok';
+    return;
+  }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
+  })
+  .then(function(res) {
+    if (res.ok) {
+      msg.textContent = 'Message sent! I will reply within 24-48 hours.';
+      msg.className = 'cfmsg ok';
+      document.getElementById('cf').reset();
+      if (note) { note.style.display = 'none'; }
+    } else { throw new Error('Failed'); }
+    btn.textContent = 'Send Message →';
+    btn.disabled = false;
+  })
+  .catch(function() {
+    var s2 = encodeURIComponent('[Portfolio Enquiry] ' + subject);
+    var b2 = encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + message);
+    window.location.href = 'mailto:emmanuelunegbu90@gmail.com?subject=' + s2 + '&body=' + b2;
+    msg.textContent = 'Could not send. Opening your email app instead.';
+    msg.className = 'cfmsg er';
+    btn.textContent = 'Send Message →';
+    btn.disabled = false;
+  });
+}
+</script>
+
+</body>
+</html>
